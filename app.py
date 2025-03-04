@@ -7,6 +7,15 @@ import subprocess
 # Streamlit App Title
 st.title("XML to CSV Converter")
 
+
+# Install SUMO
+try:
+    subprocess.run(["sudo", "apt-get", "install", "sumo", "-y"], check=True)
+    os.environ["SUMO_HOME"] = "/usr/share/sumo"
+except Exception as e:
+    print("SUMO installation failed:", e)
+
+
 # File uploader
 uploaded_file = st.file_uploader("Upload an XML file", type=["xml"])
 
