@@ -21,6 +21,7 @@ if uploaded_file is not None:
     
     # Define the output CSV file path
     temp_csv_path = temp_xml_path.replace(".xml", ".csv")
+    output_csv_name = f"{original_filename}.csv"
     
     # Run the existing xml2csv.py script
     try:
@@ -35,7 +36,7 @@ if uploaded_file is not None:
     # Provide a download button for the converted CSV
     if os.path.exists(temp_csv_path):
         with open(temp_csv_path, "rb") as file:
-            st.download_button(label="Download CSV File", data=file, file_name="Converted.csv", mime="text/csv")
+            st.download_button(label="Download CSV File", data=file, file_name=output_csv_name, mime="text/csv")
     
     # Clean up temporary files
     os.remove(temp_xml_path)
