@@ -13,6 +13,8 @@ uploaded_file = st.file_uploader("Upload an XML file", type=["xml"])
 
 if uploaded_file is not None:
     st.success("File uploaded successfully!")
+    # Extract the original file name without extension
+    original_filename = os.path.splitext(uploaded_file.name)[0]  # Removes .xml
     
     # Save the uploaded XML file temporarily
     with tempfile.NamedTemporaryFile(delete=False, suffix=".xml") as temp_xml:
