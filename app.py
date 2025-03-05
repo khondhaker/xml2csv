@@ -6,7 +6,7 @@ import subprocess
 
 # Streamlit App Title
 st.title("XML to CSV Converter")
-st.caption("SUMO Demo Class")
+st.caption("For the amazing students of CEES 3883 Transportation Engineering")
 
 # File uploader
 uploaded_file = st.file_uploader("Upload an XML file", type=["xml"])
